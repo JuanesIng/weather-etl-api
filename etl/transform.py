@@ -2,10 +2,10 @@ from datetime import datetime
 
 def transform_weather(data):
     return({
-                "nombre" : data['name'],
-                "clima" : data["weather"][0]["main"],
-                "viento" : data["wind"]["speed"],
-                "temperatura" : data["main"]["temp"],
-                "humedad" : data["main"]["humidity"],
-                "hora" : datetime.now().isoformat()
+                "name" : data['name'],
+                "weather" : data["weather"][0]["main"],
+                "windspeed" : data["wind"]["speed"],
+                "temperature" : data["main"]["temp"],
+                "humidity" : data["main"]["humidity"],
+                "date" : datetime.now().isoformat()
             })
