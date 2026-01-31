@@ -23,4 +23,4 @@ class Weather(Base):
     temperature: Mapped[float] = mapped_column(Float(), nullable=False, default=0.0)
     humidity: Mapped[float] = mapped_column(Float(), nullable=False, default=0.0)
     wind_speed: Mapped[float] = mapped_column(Float(), nullable=False, default=0.0)
-    time_stamp: Mapped[datetime] = mapped_column(DateTime(), nullable=False, default=datetime.now())
+    time_stamp: Mapped[datetime] = mapped_column(DateTime(), nullable=False, default=datetime.utcnow)
