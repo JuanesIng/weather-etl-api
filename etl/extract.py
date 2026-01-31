@@ -1,8 +1,5 @@
 import requests
 
-
-data_city = [ ]
-
 def extract_weather(city, API_KEY):
 
     """
