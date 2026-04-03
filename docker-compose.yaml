@@ -1,0 +1,26 @@
+services:
+  fastapi-clima:
+    build: ./api
+    ports:
+      - "8080:8000"
+    depends_on:
+      - dbpostgres_clima
+    env_file:
+      - .env
+
+  etl-clima:
+    build: ./etl
+    depends_on:
+      - dbpostgres_clima
+    env_file:
+      - .env
+  
+  dbpostgres_clima:
+    image: postgres:15
+    environment:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
